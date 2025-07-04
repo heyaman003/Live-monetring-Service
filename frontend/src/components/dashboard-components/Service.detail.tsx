@@ -52,7 +52,6 @@ export function ServiceDetails({ serviceId, onBack }: ServiceDetailsProps) {
   // Load more events (infinite scrolling)
   const loadMoreEvents = useCallback(async () => {
     if (isLoadingMore || !hasMore) return;
-
     setIsLoadingMore(true);
     try {
       const nextPage = page + 1;

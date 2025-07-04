@@ -1,6 +1,5 @@
 import { Service, ServiceEvent } from "@/types/service";
 
-// Mock data for demonstration
 export const mockServices: Service[] = [
   {
     id: '1',
@@ -56,12 +55,12 @@ export const mockServices: Service[] = [
   }
 ];
 
-// Simulate realistic status changes
 export const getRandomStatus = (): Service['status'] => {
   const statuses: Service['status'][] = ['Online', 'Online', 'Online', 'Online', 'Degraded', 'Offline'];
   return statuses[Math.floor(Math.random() * statuses.length)];
 };
 
+//randomly generates a service ID based on the current timestamp and a random number
 export function generateMockEvents(
   serviceId: string,
   page: number = 0,

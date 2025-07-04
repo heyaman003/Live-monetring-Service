@@ -39,7 +39,6 @@ export function ServiceDashboard({ onSelectService }: ServiceDashboardProps) {
     refetchOnWindowFocus: true, // Refresh when user returns to tab
   });
 
-  // Filter services based on current filters
   const filteredServices = services.filter(service => {
     const matchesStatus = filters.status === 'All' || service.status === filters.status;
     const matchesSearch = !filters.search || 
@@ -49,7 +48,6 @@ export function ServiceDashboard({ onSelectService }: ServiceDashboardProps) {
     return matchesStatus && matchesSearch;
   });
 
-  // Handle visibility change for immediate refresh when returning to tab
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (!document.hidden) {
@@ -129,15 +127,13 @@ export function ServiceDashboard({ onSelectService }: ServiceDashboardProps) {
         </div>
       </div>
 
-      {/* Filters */}
       <ServiceFiltersComponent
         filters={filters}
         onFiltersChange={setFilters}
         totalServices={services.length}
         filteredCount={filteredServices.length}
       />
-
-      {/* Services Table */}
+      
       <ServiceTable
         services={filteredServices}
         onSelectService={onSelectService}
@@ -145,7 +141,7 @@ export function ServiceDashboard({ onSelectService }: ServiceDashboardProps) {
         onDeleteService={handleDeleteService}
       />
 
-      {/* Modals */}
+
       <ServiceFormModal
         isOpen={isCreateModalOpen}
         onClose={() => setIsCreateModalOpen(false)}

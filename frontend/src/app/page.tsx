@@ -1,14 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Activity,
-  Bell,
-  Clock,
-  TrendingUp,
-  Server,
-  Play,
-} from "lucide-react";
+import { Activity, Bell, Clock, TrendingUp, Server, Play } from "lucide-react";
 import dynamic from "next/dynamic";
 import { Footer } from "@/components/Landing/Footer";
 import { CTA_Section } from "@/components/Landing/CTA.Section";
@@ -16,7 +9,7 @@ import { containerVariants, itemVariants } from "@/lib/varients";
 import { getStatusIcon } from "@/components/Landing/GetStatus.icon";
 import { FeatureSection } from "@/components/Landing/Feature.section";
 import { Hero_section } from "@/components/Landing/Hero.section";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
 const RandomDots = dynamic(() => import("@/components/Landing/Dots"), {
   ssr: false,
@@ -71,37 +64,36 @@ const Home = () => {
       color: "text-purple-500",
     },
   ];
-
   const serviceStatus = [
     {
-      name: "Auth Service",
+      name: "User Authentication API",
       status: "healthy",
-      uptime: "99.99%",
-      requests: "2.3M",
+      uptime: "99.8%",
+      requests: "145ms",
     },
     {
-      name: "Payment Gateway",
+      name: "Main Database",
+      status: "healthy",
+      uptime: "99.9%",
+      requests: "23ms",
+    },
+    {
+      name: "Payment Processing",
+      status: "warning",
+      uptime: "97.2%",
+      requests: "2340ms",
+    },
+    {
+      name: "Redis Cache",
       status: "healthy",
       uptime: "99.95%",
-      requests: "1.8M",
+      requests: "12ms",
     },
     {
-      name: "User Management",
-      status: "warning",
-      uptime: "99.89%",
-      requests: "3.1M",
-    },
-    {
-      name: "Analytics Engine",
-      status: "healthy",
-      uptime: "99.97%",
-      requests: "890K",
-    },
-    {
-      name: "Notification Hub",
+      name: "Email Queue",
       status: "critical",
-      uptime: "97.23%",
-      requests: "1.2M",
+      uptime: "94.1%",
+      requests: "N/A",
     },
   ];
 
@@ -134,7 +126,7 @@ const Home = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg font-semibold hover:shadow-lg transition-shadow"
-              onClick={() => router.push('/dashboard')}
+              onClick={() => router.push("/dashboard")}
             >
               <Play className="w-4 h-4 inline mr-2" />
               Live Demo
@@ -151,7 +143,7 @@ const Home = () => {
         className="relative z-10 px-6 py-20 max-w-7xl mx-auto"
       >
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <Hero_section/>
+          <Hero_section />
           {/* Live Metrics Dashboard Preview */}
           <motion.div variants={itemVariants} className="relative">
             <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6 shadow-2xl">
@@ -169,7 +161,6 @@ const Home = () => {
                     key={index}
                     whileHover={{ scale: 1.05 }}
                     className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 cursor-pointer"
-                    
                   >
                     <div className="flex items-center justify-between">
                       <metric.icon className={`w-5 h-5 ${metric.color}`} />
@@ -219,7 +210,7 @@ const Home = () => {
           </motion.div>
         </div>
       </motion.section>
-      <FeatureSection/>
+      <FeatureSection />
       <CTA_Section />
 
       <Footer />

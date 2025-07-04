@@ -52,8 +52,4 @@ COPY . .
 # This ensures Docker recognizes final-dev and final-prod as buildable stages
 ARG NODE_ENV=production
 
-# Usage:
-# Build for development:
-#   docker build --target final-dev -t my-nextjs-app-dev .
-# Build for production:
-#   docker build --target final-prod -t my-nextjs-app-prod .
+
