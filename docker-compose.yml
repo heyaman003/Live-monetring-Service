@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      target: ${DOCKER_TARGET:-final-prod}
+      args:
+        - NODE_ENV=${NODE_ENV:-production}
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+    volumes:
+      - ./frontend:/app
