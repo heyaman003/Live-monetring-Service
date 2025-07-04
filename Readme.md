@@ -29,7 +29,7 @@ A modern, full-stack, mock SRE dashboard built with Next.js 15, React, and TypeS
 
 ---
 
-## 📦 Key Libraries
+## Key Libraries
 - **next**: React framework for SSR, SSG, and API routes
 - **react, react-dom**: UI library
 - **@tanstack/react-query**: Data fetching/caching
@@ -85,7 +85,7 @@ DOCKER_TARGET=final-dev NODE_ENV=development docker-compose up --build
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 - `frontend/src/app/` - Next.js app directory (pages, API routes)
 - `frontend/src/components/` - UI and dashboard components
 - `frontend/src/lib/` - Utilities and mock API logic
