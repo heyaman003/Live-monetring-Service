@@ -2,6 +2,11 @@
 
 A modern, full-stack, mock SRE dashboard built with Next.js 15, React, and TypeScript. This project demonstrates a live monitoring UI, mock API endpoints.
 
+## Note 
+vercel follow serverless articheture to there is possibily the data may loss , so you can run locally and also you can use fs module for serverless artichture 
+
+vistit for demo here :- ```https://live-monetring.vercel.app```
+
 ---
 
 ##  Architectural Decisions
